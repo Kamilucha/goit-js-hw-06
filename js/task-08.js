@@ -13,8 +13,10 @@ function onFormSubmit(event) {
 };
 
     formData.forEach((value, names) => {
-        console.log(names);
-        console.log(value);
+      const form = {}
+      form.email = eventEl.email.value;
+      form.password = eventEl.password.value;
+      console.log(form)
     });
 
   formRef.reset()

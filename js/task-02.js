@@ -8,11 +8,13 @@ const ingredients = [
 ];
 
   const parrentEl = document.querySelector('ul');
-
+const li = [];
   ingredients.forEach(item => {
     const newElem = document.createElement('li')
     newElem.classList.add('item')
     console.log(item)
     newElem.textContent = item
-    parrentEl.append(newElem)
+   li.push(newElem)
   })
+
+   parrentEl.append(...li)

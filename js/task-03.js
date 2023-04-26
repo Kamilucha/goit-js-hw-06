@@ -15,24 +15,12 @@ const images = [
 
 
 const galleryEl = document.querySelector('.gallery');
-
-galleryEl.classList.add('img-style-flex');
-
- function makeImg (image) {
-    
-  const imgEl = document.createElement('img')
-  imgEl.src = image.url;
-  imgEl.alt = image.alt;
-  imgEl.classList.add('img-style')
+ galleryEl.classList.add('img-style-flex');
+const addImg = images.map(image =>
+  `<li class = "li-item">
    
-   return imgEl;
- }
+   <img class="img-style" src="${image.url}" alt="${image.alt}"> 
+   </li>`).join("");
 
-function makeLi(images) {
-  const liEl = document.createElement('li');
-  liEl.append(makeImg(images))
-  
-  return liEl;
-}
+galleryEl.insertAdjacentHTML("afterbegin", addImg)
  
-galleryEl.append(...images.map(makeLi))
